@@ -14,7 +14,7 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     var torqueToolCreateL5XBtn = $("<button/>").text("Criar L5X").attr("id","torqueToolCreateL5XBtn"); //criar arquivo L5X
     var torqueToolXMLIn = $("<input/>").attr({"id":"torqueToolXMLFile","name":"torqueToolXMLFile","type":"file","accept":".L5X"}); //inserir arquivo L5X
     var torqueToolXMLString ='torqueToolXMLString'; //transferir arquivo para string
-    var torqueToolLoadL5XBtn = $("<button/>").text("Selecionar L5X base").attr("id","torqueToolLoadL5XBtn"); //carrega arquivo L5X
+    var torqueToolLoadL5XBtn = $("<button/>").text("DOWNLOAD L5X base").attr("id","torqueToolLoadL5XBtn"); //carrega arquivo L5X
     //################ var estrutura ######################################
     var torqueToolBtn = $("<button/>").text("APERTADEIRA SCS - ROTINA TESTE").attr("id","torqueToolBtn");//botão para criar estrutura
     var torqueToolDiv = $("<div/>"); //divisor
@@ -170,13 +170,7 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     $(document).on('click','#torqueToolLoadL5XBtn',torqueToolLoadL5X);
     //#########
     async function torqueToolLoadL5X(){
-            try {
-                const response = await fetch('http://localhost/files/torque_tool.L5X');
-                const data = await response.text();
-                console.log(data);
-              } catch (err) {
-                console.error(err);
-              }
+        downloadL5X(torquetoolL5XBase,'torqueToolBase.L5X');
     };
     //########### botão para altera arquivos L5X conforme mudanças#######################
     $(document).on('click','#torqueToolCreateL5XBtn',torqueToolReplace);

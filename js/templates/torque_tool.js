@@ -125,8 +125,8 @@ $(document).ready(function(){ //para executar somente depois que o documento car
             $("body").append("<br/>",torqueToolForm3);//Form3
             $("body").append("<br/>",torqueToolForm4);//Form3
             //Cria botoes
-            $("body").append(torqueToolCreateL5XBtn);//Cria botoes
             $("body").append(torqueToolP);//Cria P
+            $("body").append(torqueToolCreateL5XBtn);//Cria botoes
             //Form1 - Machine Code e IP - Adicione conforme precisar
             $("#torqueToolForm1").append("<br/>",torqueToolMCLabel,"<br/>",torqueToolMCIn);
             $("#torqueToolForm1").append("<br/>",torqueToolIPLabel,"<br/>",torqueToolIPIn);

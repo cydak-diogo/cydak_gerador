@@ -18,6 +18,7 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     //################ var estrutura ######################################
     var torqueToolBtn = $("<button/>").text("APERTADEIRA SCS - ROTINA TESTE").attr("id","torqueToolBtn");//botão para criar estrutura
     var torqueToolDiv = $("<div/>").attr("id","torqueToolDiv"); //divisor
+    var torqueToolP = $("<p/>").attr("id","torqueToolP").text(""); //footer
     // Adicione mais Forms conforme precisar
     //Troque os nome e Ids dos Forms
     var torqueToolForm1 = $("<form/>").text("APERTADEIRA SCS - ROTINA TESTE").attr("id","torqueToolForm1");//Form1
@@ -125,6 +126,7 @@ $(document).ready(function(){ //para executar somente depois que o documento car
             $("body").append("<br/>",torqueToolForm4);//Form3
             //Cria botoes
             $("body").append(torqueToolCreateL5XBtn);//Cria botoes
+            $("body").append(torqueToolP);//Cria P
             //Form1 - Machine Code e IP - Adicione conforme precisar
             $("#torqueToolForm1").append("<br/>",torqueToolMCLabel,"<br/>",torqueToolMCIn);
             $("#torqueToolForm1").append("<br/>",torqueToolIPLabel,"<br/>",torqueToolIPIn);

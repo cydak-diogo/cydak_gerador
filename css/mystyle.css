@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after { 
+  box-sizing: border-box;
+}
+
+  @font-face {
+    font-family: 'Days One';
+    src: URL('./DaysOne-Regular.ttf') format('truetype');
+    src: url('DaysOne-Regular.eot');
+    src: url('DaysOne-Regular.eot?#iefix') format('embedded-opentype'),
+        url('DaysOne-Regular.woff2') format('woff2'),
+        url('DaysOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{font-family: 'Days One';}
+
+form {
+  border: 2px dashed rgb(154, 152, 152);
+  text-align: center;
+  font-size: large;
+  width: 75%;
+  position: relative;
+}
+
+input{
+  width: 50%;
+  font-size: medium;
+  margin-bottom: 5px;
+  padding: 1px 20px;
+  border-radius: 10px;
+  color: #004693;
+  border: 3px solid #004693 ;
+}
+
+input:hover {
+  background-color: #f4a220; 
+}
+
+button{
+  color: #004693;
+  border: 3px solid #004693 ;
+  text-align: center;
+  text-decoration: none;
+  padding: 1px 20px;
+  margin: 2px;
+}
+
+button:hover {
+  background-color: #f4a220; 
+}
+
+.downloadBtn {
+  padding: 1px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 25px;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+}
+
+

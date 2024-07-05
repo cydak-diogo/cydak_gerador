@@ -21,3 +21,10 @@
     pom.setAttribute('download', filename);
     pom.click();
   };
+
+  $(document).ready(function(){
+    $(document).on('dblclick','form', function() {
+        $(this).children().toggle();
+        console.log('teste');
+    });
+});

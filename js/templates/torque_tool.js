@@ -11,13 +11,13 @@
 //#######################################################################
 $(document).ready(function(){ //para executar somente depois que o documento carregar, coisa do jquery
     //################## vars para input/output do L5X ################################
-    var torqueToolCreateL5XBtn = $("<button/>").text("Criar L5X").attr("id","torqueToolCreateL5XBtn"); //criar arquivo L5X
+    var torqueToolCreateL5XBtn = $("<button/>").text("Criar L5X").attr({"id":"torqueToolCreateL5XBtn","class":"downloadBtn"}); //criar arquivo L5X
     var torqueToolXMLIn = $("<input/>").attr({"id":"torqueToolXMLFile","name":"torqueToolXMLFile","type":"file","accept":".L5X"}); //inserir arquivo L5X
     var torqueToolXMLString ='torqueToolXMLString'; //transferir arquivo para string
     var torqueToolLoadL5XBtn = $("<button/>").text("DOWNLOAD L5X base").attr("id","torqueToolLoadL5XBtn"); //carrega arquivo L5X
     //################ var estrutura ######################################
     var torqueToolBtn = $("<button/>").text("APERTADEIRA SCS - ROTINA TESTE").attr("id","torqueToolBtn");//botão para criar estrutura
-    var torqueToolDiv = $("<div/>"); //divisor
+    var torqueToolDiv = $("<div/>").attr("id","torqueToolDiv"); //divisor
     // Adicione mais Forms conforme precisar
     //Troque os nome e Ids dos Forms
     var torqueToolForm1 = $("<form/>").text("APERTADEIRA SCS - ROTINA TESTE").attr("id","torqueToolForm1");//Form1
@@ -110,19 +110,21 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     //################## Adiciona no Body ##########################
     //##############################################################
     //Adiciona na tela Principal
-    $("h1").after(torqueToolBtn,torqueToolDiv);//adiciona o botão e divisão
+    $("body").after(torqueToolDiv);//adiciona o botão e divisão
+    $("#torqueToolDiv").append(torqueToolBtn,torqueToolLoadL5XBtn);//adiciona o botão e divisão
     $("#torqueToolBtn").click(torqueToolFunction);//chama função quando o botão for clicado
    //############## cria estrutura para torque tool #########################
     function torqueToolFunction(){
         if (torqueToolStuctCreate == false) { //verificação para criar apenas uma vez
             $("button").hide(); //esconde os outros botoes
             //Adicione mais Forms se precisar
+            $("body").append(torqueToolXMLIn);//Cria botoes
             $("body").append(torqueToolForm1);//Form1
             $("body").append("<br/>",torqueToolForm2);//Form2
             $("body").append("<br/>",torqueToolForm3);//Form3
             $("body").append("<br/>",torqueToolForm4);//Form3
             //Cria botoes
-            $("body").append("<br/>",torqueToolLoadL5XBtn,'<br/>',torqueToolXMLIn,torqueToolCreateL5XBtn);//Cria botoes
+            $("body").append(torqueToolCreateL5XBtn);//Cria botoes
             //Form1 - Machine Code e IP - Adicione conforme precisar
             $("#torqueToolForm1").append("<br/>",torqueToolMCLabel,"<br/>",torqueToolMCIn);
             $("#torqueToolForm1").append("<br/>",torqueToolIPLabel,"<br/>",torqueToolIPIn);

@@ -21,19 +21,16 @@
 form {
   border: 2px dashed rgb(154, 152, 152);
   text-align: center;
-  font-size: large;
-  width: 75%;
   position: relative;
 }
 
 input{
-  width: 50%;
-  font-size: medium;
   margin-bottom: 5px;
-  padding: 1px 20px;
+  padding: 1px 5px;
   border-radius: 10px;
   color: #004693;
   border: 3px solid #004693 ;
+  text-align: center;
 }
 
 input:hover {
@@ -45,7 +42,8 @@ button{
   border: 3px solid #004693 ;
   text-align: center;
   text-decoration: none;
-  padding: 1px 20px;
+  padding: 1px 10px;
+  border-radius: 10px;
   margin: 2px;
 }
 
@@ -54,8 +52,6 @@ button:hover {
 }
 
 .downloadBtn {
-  padding: 1px 20px;
-  border-radius: 10px;
   display: inline-block;
   font-size: 25px;
   position: fixed;
@@ -63,4 +59,12 @@ button:hover {
   right: 2%;
 }
 
-
+#torqueToolP {
+    height: 60px;  /* footer height */
+    padding-top: 20px;
+    display: block;
+    margin-top: 20px; /* space between content and footer */
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+}

@@ -1,0 +1,45 @@
+##############################################
+Instalar o VS Code
+https://code.visualstudio.com/Download
+##############################################
+Instalar extensions - opcional
+----------------------
+Name: IntelliCode
+Id: VisualStudioExptTeam.vscodeintellicode
+Description: AI-assisted development
+Version: 1.3.1
+Publisher: Microsoft
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode
+-----------------------
+Name: JavaScript Booster
+Id: sburg.vscode-javascript-booster
+Description: Boost your productivity with advanced JavaScript/TypeScript refactorings and commands
+Version: 14.0.1
+Publisher: Stephan Burguchev
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=sburg.vscode-javascript-booster
+--------------------------
+Name: Material Icon Theme
+Id: PKief.material-icon-theme
+Description: Material Design Icons for Visual Studio Code
+Version: 5.4.2
+Publisher: Philipp Kief
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
+---------------------------------
+Name: Prettier - Code formatter
+Id: esbenp.prettier-vscode
+Description: Code formatter using prettier
+Version: 10.4.0
+Publisher: Prettier
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+--------------------------------------------
+Name: Tailwind CSS IntelliSense
+Id: bradlc.vscode-tailwindcss
+Description: Intelligent Tailwind CSS tooling for VS Code
+Version: 0.12.5
+Publisher: Tailwind Labs
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+--------------------------------------------
+############################################
+Criar conta no github
+https://github.com/
+https://docs.github.com/en/get-started/start-your-journey/about-github-and-git

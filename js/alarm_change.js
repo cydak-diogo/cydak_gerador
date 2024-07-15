@@ -9,7 +9,7 @@
 // Precisar de ajuda é só me chamar
 // 
 //########### VARiaveis ##############
-var alarmChangeBtn = $("<button/>").text("Abrir Correção de Alarmes").attr("id","alarmChangeBtn");//botão para criar estrutura
+var alarmChangeBtn = $("<button/>").text("CORREÇÃO DE ALARMES").attr("id","alarmChangeBtn");//botão para criar estrutura
 var alarmChangeDiv = $("<div/>").attr("id","alarmChangeDiv"); //divisor
 var fileL5XIn = $("<input/>").attr({"id":"filelL5K","name":"filelL5K","type":"file","accept":".L5K"}); //inserir arquivo L5X
 var stringL5K = 'stringL5K'; //transferir arquivo para string

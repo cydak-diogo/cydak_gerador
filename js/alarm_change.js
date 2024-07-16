@@ -17,6 +17,8 @@ var fileL5KName = 'name.L5K' //nome do arquivo L5K
 var positionStatus = 0; //definir em que lugar na string está
 var initialAlarm = 50;
 var finalAlarm = 899;
+var alarmChangeReloadBtn = $("<button/>").text("VOLTAR").attr("class","reloadBtn"); //criar arquivo L5X
+   
 //############ para executar somente depois que o documento carregar, coisa do jquery
 $(document).ready(function(){
     //############ adiciona o botão e divisão
@@ -30,6 +32,7 @@ $(document).ready(function(){
         createNewP('Valor inicial dos Alarms: '+ initialAlarm);
         createNewP('Valor maximo dos Alarms: '+ finalAlarm);
         $("body").append(fileL5XIn);//Cria botoes
+        $("body").append(alarmChangeReloadBtn);//Cria botoes
     }
     //############ Carregar arquivo L5K
     $(document).on('change','#filelL5K', function(){

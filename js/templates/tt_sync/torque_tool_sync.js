@@ -6,10 +6,8 @@
 //#######################################################################
 $(document).ready(function(){ //para executar somente depois que o documento carregar, coisa do jquery
     //################## vars para input/output do L5X ################################
-    var torqueToolSyncCreateL5XBtn = $("<button/>").text("Criar L5X").attr({"id":"torqueToolSyncCreateL5XBtn","class":"downloadBtn"}); //criar arquivo L5X
-    //var torqueToolSyncXMLIn = $("<input/>").attr({"id":"torqueToolSyncXMLFile","name":"torqueToolSyncXMLFile","type":"file","accept":".L5X"}); //inserir arquivo L5X
-    var torqueToolSyncXMLString ='torqueToolSyncXMLString'; //transferir arquivo para string
-    //var torqueToolSyncLoadL5XBtn = $("<button/>").text("DOWNLOAD L5X base").attr("id","torqueToolSyncLoadL5XBtn"); //carrega arquivo L5X
+    var torqueToolSyncCreateL5XBtn = $("<button/>").text("CRIAR L5X").attr({"id":"torqueToolSyncCreateL5XBtn","class":"downloadBtn"}); //criar arquivo L5X
+    var torqueToolSyncReloadBtn = $("<button/>").text("VOLTAR").attr("class","reloadBtn"); //criar arquivo L5X
     //################ var estrutura ######################################
     var torqueToolSyncBtn = $("<button/>").text("APERTADEIRA SYNCHRONOUS SCS").attr("id","torqueToolSyncBtn");//botão para criar estrutura
     var torqueToolSyncDiv = $("<div/>").attr("id","torqueToolSyncDiv"); //divisor
@@ -30,6 +28,10 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     var torqueToolSyncReplaceMC = '18524'; //ok
     var torqueToolSyncMCLabel = $("<label/>").text("Machine Code").attr("for","torqueToolSyncMCode");//Machine Code label
     var torqueToolSyncMCIn = $("<input/>").attr({"type":"text","id":"torqueToolSyncMCode","name":"torqueToolSyncMCode","value":torqueToolSyncReplaceMC});//Machine Code Input
+    //System
+    var torqueToolSyncReplaceSystem = 'Trim2B';
+    var torqueToolSyncSystemLabel = $("<label/>").text("System").attr("for","torqueToolSyncSystem");//Machine Code label
+    var torqueToolSyncSystemIn = $("<input/>").attr({"type":"text","id":"torqueToolSyncSystem","name":"torqueToolSyncSystem","value":torqueToolSyncReplaceSystem});//System Input
     //IP Address
     var torqueToolSyncReplaceIP = '192.168.2.110'; //ok
     var torqueToolSyncIPLabel = $("<label/>").text("IP Address").attr("for","torqueToolSyncIP");// IP label
@@ -94,10 +96,6 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     var torqueToolSyncReplaceModelCode = 'StringTrim2B_Station53_ModelCode';//ok
     var torqueToolSyncModelCodeLbl = $("<label/>").text("MODEL CODE").attr("for","torqueToolSyncModelCode");//MODEL CODE label
     var torqueToolSyncModelCodeIn = $("<input/>").attr({"type":"text","id":"torqueToolSyncModelCode","name":"torqueToolSyncModelCode","value":torqueToolSyncReplaceModelCode});//MODEL CODE input
-    //MODEL VARIANT
-    var torqueToolSyncReplaceModelVariant = 'StringTracking_Station_Variant'; //nao usado
-    var torqueToolSyncModelVariantLbl = $("<label/>").text("MODEL VARIANT").attr("for","torqueToolSyncModelVariant");//MODEL VARIANT label
-    var torqueToolSyncModelVariantIn = $("<input/>").attr({"type":"text","id":"torqueToolSyncModelVariant","name":"torqueToolSyncModelVariant","value":torqueToolSyncReplaceModelVariant});//MODEL VARIANT input
     //LINE TRACKING
     var torqueToolSyncReplaceTracking = 'Trim2B_Tracking[20]';//ok
     var torqueToolSyncTrackingLbl = $("<label/>").text("LINE TRACKING").attr("for","torqueToolSyncTracking");//LINE TRACKING label
@@ -108,7 +106,6 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     //Adiciona na tela Principal
     $("body").after(torqueToolSyncDiv);//adiciona divisão
     $("#torqueToolSyncDiv").append(torqueToolSyncBtn);//adiciona o botão 
-    //$("#torqueToolSyncDiv").append(torqueToolSyncLoadL5XBtn);//adiciona o botão
     $("#torqueToolSyncBtn").click(torqueToolSyncFunction);//chama função quando o botão for clicado
    //############## cria estrutura para torque tool #########################
     function torqueToolSyncFunction(){
@@ -123,10 +120,11 @@ $(document).ready(function(){ //para executar somente depois que o documento car
             //Cria botoes
             $("body").append(torqueToolSyncP);//Cria P
             $("body").append(torqueToolSyncCreateL5XBtn);//Cria botoes
-
+            $("body").append(torqueToolSyncReloadBtn);//Cria botoes
             //Form1 - Machine Code e IP - Adicione conforme precisar
             $("#torqueToolSyncForm1").append("<br/>",torqueToolSyncMCLabel,"<br/>",torqueToolSyncMCIn);
             $("#torqueToolSyncForm1").append("<br/>",torqueToolSyncIPLabel,"<br/>",torqueToolSyncIPIn);
+            $("#torqueToolSyncForm1").append("<br/>",torqueToolSyncSystemLabel,"<br/>",torqueToolSyncSystemIn);
             //Form2 - Andon 
             $("#torqueToolSyncForm2").append("<br/>",torqueToolSyncStationLbl,"<br/>",torqueToolSyncStationIn);
             $("#torqueToolSyncForm2").append("<br/>",torqueToolSyncLep1FltLbl,"<br/>",torqueToolSyncLep1FltIn);
@@ -145,42 +143,18 @@ $(document).ready(function(){ //para executar somente depois que o documento car
             $("#torqueToolSyncForm4").append("<br/>",torqueToolSyncStatusInhiLbl,"<br/>",torqueToolSyncStatusInhiIn);
             $("#torqueToolSyncForm4").append("<br/>",torqueToolSyncConveyorLbl,"<br/>",torqueToolSyncConveyorIn);
             $("#torqueToolSyncForm4").append("<br/>",torqueToolSyncModelCodeLbl,"<br/>",torqueToolSyncModelCodeIn);
-            //$("#torqueToolSyncForm4").append("<br/>",torqueToolSyncModelVariantLbl,"<br/>",torqueToolSyncModelVariantIn);
             $("#torqueToolSyncForm4").append("<br/>",torqueToolSyncTrackingLbl,"<br/>",torqueToolSyncTrackingIn);
             //criar apenas uma vez a estrutura
             torqueToolSyncStuctCreate = true;
         };
-    };
-    //############# Carrega arquivo L5X  #####################################
-    $(document).on('change','#torqueToolSyncXMLFile', function() {
-        torqueToolSyncLoadString(this);
-        });
-    //############ Funcao que faz upload um arquivo e converte pra string ################
-    function torqueToolSyncLoadString(idXMLFile) {
-        let file = idXMLFile.files[0];
-        let reader = new FileReader();
-        reader.onload = function() {
-            torqueToolSyncXMLString = reader.result;
-        };
-        reader.onerror = function() {
-            console.log(reader.error);
-        };
-        reader.readAsText(file);
-    };
-    //############ Funcao que seleciona uma string e converte para arquivo ################
-    $(document).on('click','#torqueToolSyncLoadL5XBtn',torqueToolSyncLoadL5X);
-    //#########
-    async function torqueToolSyncLoadL5X(){
-        downloadL5X(torqueToolSyncL5X,'torqueToolSync.L5X');
-        downloadL5X(torqueToolSyncHardwareL5X,'torqueToolSyncHardware.L5X');
     };
     //########### botão para altera arquivos L5X conforme mudanças#######################
     $(document).on('click','#torqueToolSyncCreateL5XBtn',torqueToolSyncReplace);
     //############ Function para trocar as tags no L5x##############################
     // modifique conforme tags do L5X
     function torqueToolSyncReplace (){
-        let stringRplc = torqueToolSyncL5X;
-        let stringRplcHw = torqueToolSyncHardwareL5X;
+        let stringRplc = torqueToolSyncL5X;//var em outro js
+        let stringRplcHw = torqueToolSyncHardwareL5X;//var em outro js
         //Replace torqueToolSyncReplaceMC
         stringRplcHw = replaceAll(stringRplcHw, torqueToolSyncReplaceMC, $('#torqueToolSyncMCode').val());
         stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceMC, $('#torqueToolSyncMCode').val());
@@ -221,14 +195,14 @@ $(document).ready(function(){ //para executar somente depois que o documento car
         stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceConveyor, $('#torqueToolSyncConveyor').val());
         //MODEL CODE
         stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceModelCode, $('#torqueToolSyncModelCode').val());
-        //MODEL VARIANT
-        //stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceModelVariant, $('#torqueToolSyncModelVariant').val());
         //LINE TRACKING
         stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceTracking, $('#torqueToolSyncTracking').val());
+        //System
+        stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceSystem, $('#torqueToolSyncSystem').val());
+       
+        let filename = ('_Sync_TT' + $('#torqueToolSyncMCode').val() + '.L5X');
 
-        let filename = ('torque_tool_' + $('#torqueToolSyncMCode').val() + '_routine.L5X');
-
-        downloadL5X(stringRplc,filename);
-        downloadL5X(stringRplcHw,('Hardware_'+filename));
+        downloadL5X(stringRplc,('Routine'+filename));
+        downloadL5X(stringRplcHw,('Hardware'+filename));
     };
 });

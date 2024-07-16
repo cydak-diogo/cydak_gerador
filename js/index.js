@@ -26,17 +26,21 @@ $(document).ready(function(){
   $(document).on('dblclick','form', function() {
     $(this).children().toggle();
   });
-//Aumenta o tamanho das inputs
+  //Aumenta o tamanho das inputs
   $(document).on('keyup','input', function() {
     if ($(this).val().length > 12) {
       $(this).attr('size', $(this).val().length);
       };
   });
-//Aumenta o tamanho das inputs
+  //Aumenta o tamanho das inputs
   $(document).on('click','input', function() {
     if ($(this).val().length > 12) {
     $(this).attr('size', $(this).val().length);
     };
   });
-
+  //Reload Page
+  $(document).on('click','.reloadBtn',reloadPage);
+  function reloadPage(){
+    location.reload()
+  };
 });

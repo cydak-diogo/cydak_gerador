@@ -59,6 +59,14 @@ button:hover {
   right: 2%;
 }
 
+.reloadBtn {
+  display: inline-block;
+  font-size: 25px;
+  position: fixed;
+  bottom: 2%;
+  left: 2%;
+}
+
 #TTFooter {
     height: 60px;  /* footer height */
     padding-top: 20px;

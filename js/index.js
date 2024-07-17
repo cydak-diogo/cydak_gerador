@@ -14,12 +14,17 @@
   };
 
   //########## Função para fazer download do arquivo L5X #############################
-  function downloadL5X(stringXMLDown,filename){
+  function downloadStringToFile(stringXMLDown,filename){
     let bb = new Blob([stringXMLDown], {type: 'text/plain'});
     let pom = document.createElement('a');
     pom.setAttribute('href', window.URL.createObjectURL(bb));
     pom.setAttribute('download', filename);
     pom.click();
+  };
+  //Create a <p> e coloca no body
+  function createNewP(textP){    
+    var p = $('<p>').text(textP);
+    $('body').append(p);
   };
 
 $(document).ready(function(){

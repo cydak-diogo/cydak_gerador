@@ -76,3 +76,12 @@ button:hover {
     position: relative;
     width: 100%;
 }
+
+#logo_cydak {
+  width: 10%;
+  height: auto;
+  display: inline-block;
+  position: fixed;
+  top: 2%;
+  right: 2%;
+}

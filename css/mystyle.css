@@ -18,6 +18,23 @@
 
 *{font-family: 'Days One';}
 
+:root {
+  --cor-fundo-clara: #ffffff;
+  --cor-fundo-escura: #000000;
+  --cor-texto-clara: #004693;
+  --cor-texto-escura: #ffffff;
+}
+
+body {
+  background-color: var(--cor-fundo-clara);
+  color: var(--cor-texto-clara);
+}
+
+body.tema-escuro {
+  background-color: var(--cor-fundo-escura);
+  color: var(--cor-texto-escura);
+}
+
 form {
   border: 2px dashed rgb(154, 152, 152);
   text-align: center;

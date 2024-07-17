@@ -5,6 +5,20 @@
 //Coloca seu nome, porque teve que modificar e contato aqui em baixo, lembra de comentar no programa
 //################## Revisoes ##########################
 
+// Função para aplicar o tema de acordo com a preferência do usuário
+function aplicarTemaPreferido() {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('tema-escuro');
+  } else {
+    document.body.classList.remove('tema-escuro');
+  }
+}
+// Aplicar o tema ao carregar a página
+aplicarTemaPreferido();
+// Atualizar o tema quando a preferência do usuário mudar
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', aplicarTemaPreferido);
+
+
 //isso aqui ajuda no replace
   function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string

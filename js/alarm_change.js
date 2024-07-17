@@ -11,14 +11,14 @@
 //########### VARiaveis ##############
 var alarmChangeBtn = $("<button/>").text("CORREÇÃO DE ALARMES").attr("id","alarmChangeBtn");//botão para criar estrutura
 var alarmChangeDiv = $("<div/>").attr("id","alarmChangeDiv"); //divisor
-var fileL5XIn = $("<input/>").attr({"id":"filelL5K","name":"filelL5K","type":"file","accept":".L5K"}); //inserir arquivo L5X
-var stringL5K = 'stringL5K'; //transferir arquivo para string
+var alarmChangefileL5XIn = $("<input/>").attr({"id":"alarmChangefilelL5K","name":"alarmChangefilelL5K","type":"file","accept":".L5K"}); //inserir arquivo L5X
+var alarmChangeStringL5K = 'alarmChangeStringL5K'; //transferir arquivo para string
 var fileL5KName = 'name.L5K' //nome do arquivo L5K
 var positionStatus = 0; //definir em que lugar na string está
 var initialAlarm = 50;
 var finalAlarm = 899;
 var alarmChangeReloadBtn = $("<button/>").text("VOLTAR").attr("class","reloadBtn"); //criar arquivo L5X
-   
+
 //############ para executar somente depois que o documento carregar, coisa do jquery
 $(document).ready(function(){
     //############ adiciona o botão e divisão
@@ -29,13 +29,14 @@ $(document).ready(function(){
 
     function alarmChangeFunction(){
         $("button").hide(); //esconde os outros botoes
-        createNewP('Valor inicial dos Alarms: '+ initialAlarm);
-        createNewP('Valor maximo dos Alarms: '+ finalAlarm);
-        $("body").append(fileL5XIn);//Cria botoes
+        createNewP('CORREÇÃO DOS ALARMS')
+        createNewP('-valor inicial dos Alarms: '+ initialAlarm);
+        createNewP('-valor maximo dos Alarms: '+ finalAlarm);
+        $("body").append(alarmChangefileL5XIn);//Cria botoes
         $("body").append(alarmChangeReloadBtn);//Cria botoes
     }
     //############ Carregar arquivo L5K
-    $(document).on('change','#filelL5K', function(){
+    $(document).on('change','#alarmChangefilelL5K', function(){
         fileLoadToString(this);
     });
     //############ Funcao que faz upload um arquivo e converte pra string ################
@@ -44,7 +45,7 @@ $(document).ready(function(){
         fileL5KName = idXMLFile.files[0].name; //pega nome do arquivo
         let reader = new FileReader();
         reader.onload = function() {
-            stringL5K = reader.result; //copia arquivo pra string depois que carregou tudo
+            alarmChangeStringL5K = reader.result; //copia arquivo pra string depois que carregou tudo
             alert('Aguarde alguns segundos')
             callSequence(); //chama funcao main
         };
@@ -56,7 +57,7 @@ $(document).ready(function(){
     //--------------------------------------------------------------------------------
     //############ Chamada das functions em sequencia
     function callSequence (){
-        var replaceString = stringL5K;
+        let replaceString = alarmChangeStringL5K;
         //contagem de programas
         let countPrograms = countOccurrences(replaceString,"	PROGRAM ");// procura pelos carateres dentro de "", se mudar não funciona
         positionStatus = findPosition(replaceString,"	PROGRAM ",0);
@@ -157,15 +158,11 @@ $(document).ready(function(){
         }
         var userResponse = confirm('Fazer download do arquivo ?');
         if (userResponse == true) {
-            downloadL5K(replaceString,('New_'+fileL5KName));
+            downloadStringToFile(replaceString,('New_'+fileL5KName));
         };
     };
     //--------------------------------------------------------------------------------
-    //Create a <p> e coloca no body
-    function createNewP(textP){    
-        var p = $('<p>').text(textP);
-        $('body').append(p);
-    };
+
     //############ Funcao para contar quantas vezes encontra determinada string
     function countOccurrences(str, subStr, startPos, endPos){
         let count = 0;
@@ -210,13 +207,5 @@ $(document).ready(function(){
         }else{
             return true
         }
-    };
-    //########## Função para fazer download do arquivo L5X #############################
-    function downloadL5K(stringXMLDown,filename){
-        let bb = new Blob([stringXMLDown], {type: 'text/plain'});
-        let pom = document.createElement('a');
-        pom.setAttribute('href', window.URL.createObjectURL(bb));
-        pom.setAttribute('download', filename);
-        pom.click();
     };
 }); 

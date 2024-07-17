@@ -25233,8 +25233,7 @@ PLC Andon]]>
 </Rung>
 <Rung Number="23" Type="N">
 <Comment>
-<![CDATA[====================================================================
-
+<![CDATA[
 <@INFO>
 ################################################################
 #QDI
@@ -25246,12 +25245,6 @@ PLC Andon]]>
 # Move this rung to QDI program, routine C005_QDI_LrgBFR 
 # Don't forget to check the parameters 
 #################################################################
-
-Part Picking on Station 13
-
-# Put EPA7 result on QDI buffer
-
-====================================================================
 ]]>
 </Comment>
 <Text>

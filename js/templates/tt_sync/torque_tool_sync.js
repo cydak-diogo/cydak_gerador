@@ -14,7 +14,7 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     var torqueToolSyncP = $("<p/>").attr("id","TTFooter").text(""); //footer
     // Adicione mais Forms conforme precisar
     //Troque os nome e Ids dos Forms
-    var torqueToolSyncForm1 = $("<form/>").text("APERTADEIRA SYNCHRONOUS SCS").attr("id","torqueToolSyncForm1");//Form1
+    var torqueToolSyncForm1 = $("<form/>").text("--> APERTADEIRA SYNCHRONOUS SCS <--").attr("id","torqueToolSyncForm1");//Form1
     var torqueToolSyncForm2 = $("<form/>").text("ANDON").attr("id","torqueToolSyncForm2");//Form2
     var torqueToolSyncForm3 = $("<form/>").text("KALARM").attr("id","torqueToolSyncForm3");//Form3
     var torqueToolSyncForm4 = $("<form/>").text("MANUAL INPUT").attr("id","torqueToolSyncForm4");//Form4
@@ -92,6 +92,14 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     var torqueToolSyncReplaceConveyor = 'Conv_Trim2B';//ok
     var torqueToolSyncConveyorLbl = $("<label/>").text("CONVEYOR").attr("for","torqueToolSyncConveyor");//CONVEYOR label
     var torqueToolSyncConveyorIn = $("<input/>").attr({"type":"text","id":"torqueToolSyncConveyor","name":"torqueToolSyncConveyor","value":torqueToolSyncReplaceConveyor});//CONVEYOR input
+    //IHM
+    var torqueToolSyncReplaceIHM = 'ToolStsDisp_Trim2B.ToolNumber[113]';//ok
+    var torqueToolSyncIHMLbl = $("<label/>").text("IHM").attr("for","torqueToolSyncIHM");//IHM label
+    var torqueToolSyncIHMIn = $("<input/>").attr({"type":"text","id":"torqueToolSyncIHM","name":"torqueToolSyncIHM","value":torqueToolSyncReplaceIHM});//IHM input
+    //IHM
+    var torqueToolSyncReplaceQDI = 'QDIMerging_Trim2B[19].EPA4';//ok
+    var torqueToolSyncQDILbl = $("<label/>").text("QDI").attr("for","torqueToolSyncQDI");//QDI label
+    var torqueToolSyncQDIIn = $("<input/>").attr({"type":"text","id":"torqueToolSyncQDI","name":"torqueToolSyncQDI","value":torqueToolSyncReplaceQDI});//QDI input
     //MODEL CODE
     var torqueToolSyncReplaceModelCode = 'StringTrim2B_Station53_ModelCode';//ok
     var torqueToolSyncModelCodeLbl = $("<label/>").text("MODEL CODE").attr("for","torqueToolSyncModelCode");//MODEL CODE label
@@ -144,6 +152,8 @@ $(document).ready(function(){ //para executar somente depois que o documento car
             $("#torqueToolSyncForm4").append("<br/>",torqueToolSyncConveyorLbl,"<br/>",torqueToolSyncConveyorIn);
             $("#torqueToolSyncForm4").append("<br/>",torqueToolSyncModelCodeLbl,"<br/>",torqueToolSyncModelCodeIn);
             $("#torqueToolSyncForm4").append("<br/>",torqueToolSyncTrackingLbl,"<br/>",torqueToolSyncTrackingIn);
+            $("#torqueToolSyncForm4").append("<br/>",torqueToolSyncIHMLbl,"<br/>",torqueToolSyncIHMIn);
+            $("#torqueToolSyncForm4").append("<br/>",torqueToolSyncQDILbl,"<br/>",torqueToolSyncQDIIn);
             //criar apenas uma vez a estrutura
             torqueToolSyncStuctCreate = true;
         };
@@ -195,6 +205,10 @@ $(document).ready(function(){ //para executar somente depois que o documento car
         stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceConveyor, $('#torqueToolSyncConveyor').val());
         //MODEL CODE
         stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceModelCode, $('#torqueToolSyncModelCode').val());
+        //IHM
+        stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceIHM, $('#torqueToolSyncIHM').val());
+        //QDI
+        stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceQDI, $('#torqueToolSyncQDI').val());
         //LINE TRACKING
         stringRplc = replaceAll(stringRplc, torqueToolSyncReplaceTracking, $('#torqueToolSyncTracking').val());
         //System

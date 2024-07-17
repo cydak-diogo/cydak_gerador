@@ -22874,19 +22874,16 @@ TT18527]]>
 <Comment>
 <![CDATA[
 ###############################################################
-
-
-
 #Machine Code: TT18524
 #Station: #52
 #SubSystem: Trim2B
 #GSIP: 18524
 #Programs: 15 Model Montana &V80 UPCFNA:XX Part Number Operation #N#
 #Program 16 Model Montana &V3Q UPCFNA:XX Part Number Operation
-#Option Family: OF_300
-#Family Address:
+#Option Family: 
+#Family Address: 
 #IPs: TT: 192.168.2.110 ToolsNet: xxx.xxx.x.xxx
-#Comments: Falta pegar informação
+#Comments: Verificar informações
 #END
 ################################################################
 # <@TODO> 

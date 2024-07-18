@@ -89,11 +89,11 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     var partPickSyncKalrmBKCfgIn = $("<input/>").attr({"type":"text","id":"partPickSyncKalrmBKCfg","name":"partPickSyncKalrmBKCfg","value":partPickSyncReplaceKalrmBKCfg});//KALARM BKCfg input
     //KALARM BK Input
     var partPickSyncReplaceKalrmBKInput = '#106';//ok
-    var partPickSyncKalrmBKInputLbl = $("<label/>").text("KALARM BK FAULT").attr("for","partPickSyncKalrmBKInput");//KALARM BKInput label
+    var partPickSyncKalrmBKInputLbl = $("<label/>").text("KALARM BK INPUT FAULT").attr("for","partPickSyncKalrmBKInput");//KALARM BKInput label
     var partPickSyncKalrmBKInputIn = $("<input/>").attr({"type":"text","id":"partPickSyncKalrmBKInput","name":"partPickSyncKalrmBKInput","value":partPickSyncReplaceKalrmBKInput});//KALARM BKInput input
     //KALARM BK Output
     var partPickSyncReplaceKalrmBKOutput = '#107';//ok
-    var partPickSyncKalrmBKOutputLbl = $("<label/>").text("KALARM BK FAULT").attr("for","partPickSyncKalrmBKOutput");//KALARM BKOutput label
+    var partPickSyncKalrmBKOutputLbl = $("<label/>").text("KALARM BK OUTPUT FAULT").attr("for","partPickSyncKalrmBKOutput");//KALARM BKOutput label
     var partPickSyncKalrmBKOutputIn = $("<input/>").attr({"type":"text","id":"partPickSyncKalrmBKOutput","name":"partPickSyncKalrmBKOutput","value":partPickSyncReplaceKalrmBKOutput});//KALARM BKOutput input    
     //STATUS INHIBITED
     var partPickSyncReplaceStatusInhi = 'Trim2B_1StatusInhibited.4';//ok
@@ -241,7 +241,7 @@ $(document).ready(function(){ //para executar somente depois que o documento car
         //System
         stringRplc = replaceAll(stringRplc, partPickSyncReplaceSystem, $('#partPickSyncSystem').val());
        
-        let filename = ('_Sync_TT' + $('#partPickSyncMCode').val() + '.L5X');
+        let filename = ('_Sync_PP' + $('#partPickSyncMCode').val() + '.L5X');
 
         downloadStringToFile(stringRplc,('Routine'+filename));
         downloadStringToFile(stringRplcHw,('Hardware'+filename));

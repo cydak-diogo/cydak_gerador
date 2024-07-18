@@ -11,7 +11,7 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     //################ var estrutura ######################################
     var torqueToolSyncBtn = $("<button/>").text("APERTADEIRA SYNCHRONOUS SCS").attr("id","torqueToolSyncBtn");//botão para criar estrutura
     var torqueToolSyncDiv = $("<div/>").attr("id","torqueToolSyncDiv"); //divisor
-    var torqueToolSyncP = $("<p/>").attr("id","TTFooter").text(""); //footer
+    var torqueToolSyncP = $("<p/>").attr("id","pFooter").text(""); //footer
     // Adicione mais Forms conforme precisar
     //Troque os nome e Ids dos Forms
     var torqueToolSyncForm1 = $("<form/>").text("--> APERTADEIRA SYNCHRONOUS SCS <--").attr("id","torqueToolSyncForm1");//Form1

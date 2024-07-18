@@ -11,7 +11,7 @@ $(document).ready(function(){ //para executar somente depois que o documento car
     //################ var estrutura ######################################
     var torqueToolAsyncBtn = $("<button/>").text("APERTADEIRA ASYNCHRONOUS SCS").attr("id","torqueToolAsyncBtn");//botão para criar estrutura
     var torqueToolAsyncDiv = $("<div/>").attr("id","torqueToolAsyncDiv"); //divisor
-    var torqueToolAsyncP = $("<p/>").attr("id","TTFooter").text(""); //footer
+    var torqueToolAsyncP = $("<p/>").attr("id","pFooter").text(""); //footer
     // Adicione mais Forms conforme precisar
     //Troque os nome e Ids dos Forms
     var torqueToolAsyncForm1 = $("<form/>").text("--> APERTADEIRA ASYNCHRONOUS SCS <--").attr("id","torqueToolAsyncForm1");//Form1

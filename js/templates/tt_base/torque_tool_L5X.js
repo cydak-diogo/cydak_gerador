@@ -1961,6 +1961,47 @@ Device Data]]>
 </AddOnInstructionDefinition>
 </AddOnInstructionDefinitions>
 <Tags Use="Context">
+<Tag Name="TT12345" TagType="Base" DataType="AOI_TorqueTool_SCS" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[136340011,92,0,[0,[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00']],[[1,9],[36,57,66,71,69
+		,66,55,54,72,48,82,66,49,56,56,52,57,51,0,0,0,10,0,0,0,0,0,0,0,0],0,0,[-1072019019,2000,557]],[0,1500,0],0,[0,'$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,500,0],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,0,0],66,[25,'9BGEB76H0RB188493$00$00$00$lI$C48$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[25,'9BGEB76H0RB188493$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],3,[3,'GAP$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AOI_TorqueTool_SCS">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="1"/>
+<DataValueMember Name="HeartBeat" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CommOk" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ConvFPS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TorqueOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="TorqueNOK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToolRunning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="JobRunning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="JobOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="JobNOK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="JobBypass" DataType="BOOL" Value="0"/>
+<DataValueMember Name="JobRelease" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ConvRunning" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FootPrintPercent" DataType="DINT" Radix="Decimal" Value="92"/>
+<DataValueMember Name="StnJobOk" DataType="BOOL" Value="1"/>
+<DataValueMember Name="StnBypass" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StnRelease" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ConveyorStop" DataType="BOOL" Value="0"/>
+<DataValueMember Name="StnAndonON" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT_ProgNum" DataType="SINT" Radix="ASCII" Value="'$00'"/>
+<DataValueMember Name="StnSemJob" DataType="BOOL" Value="0"/>
+<DataValueMember Name="JobFault" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
 <Tag Name="Atlas_TT12345" Class="Standard" TagType="Base" DataType="zd_TorqueTool_AtlasCopco" Constant="false" ExternalAccess="Read/Write">
 <Data Format="L5K">
 <![CDATA[[[0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

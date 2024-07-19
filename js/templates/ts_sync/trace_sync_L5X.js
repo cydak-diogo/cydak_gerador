@@ -3399,6 +3399,164 @@ Device Data]]>
 </AddOnInstructionDefinition>
 </AddOnInstructionDefinitions>
 <Tags Use="Context">
+<Tag Name="BK17129" TagType="Base" DataType="zd_Turck_TBENL4_16DXP1" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[0,[0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="zd_Turck_TBENL4_16DXP1">
+<DataValueMember Name="InputsOK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputsOK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ConfigOK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InputFltMem" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputFltMem" DataType="BOOL" Value="0"/>
+<StructureMember Name="Comm" DataType="zz_EthernetModuleData">
+<DataValueMember Name="OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FltMem" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PortStatus" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PortCommWarning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EntryStatus" DataType="INT" Radix="Decimal" Value="0"/>
+</StructureMember>
+<StructureMember Name="FaultDelay" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="AuxPwrNotOnTmr" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="AuxPwrNotOffTmr" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="I" DataType="zz_Turck_TBENL4_16DXPIn1">
+<DataValueMember Name="DiagWarning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved01" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved02" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved03" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved04" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved05" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved06" DataType="BOOL" Value="0"/>
+<DataValueMember Name="V2TooLow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved08" DataType="BOOL" Value="0"/>
+<DataValueMember Name="V1TooLow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InternalCommFlt" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ConfigFault" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved12" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved13" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ForceModeActive" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved15" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D00" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D01" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D02" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D03" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D04" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D05" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D06" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D07" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D08" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D09" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D10" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D11" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D12" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D13" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D14" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D15" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IODiagnostic" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved33" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved34" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved35" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved36" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved37" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved38" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved39" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved40" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved41" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved42" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved43" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved44" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DiagsActive" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved46" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved47" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Input00Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Input01Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Input02Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Input03Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Input04Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Input05Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Input06Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Input07Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output00Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output01Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output02Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output03Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output04Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output05Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output06Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output07Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output08Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output09Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output10Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output11Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output12Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output13Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output14Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output15Short" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved72" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved73" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved74" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved75" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved76" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved77" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved78" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved79" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="O" DataType="zz_Turck_TBENL4_16DOPOut">
+<DataValueMember Name="Reserved00" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved01" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved02" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved03" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved04" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved05" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved06" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved07" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved08" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved09" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved10" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved11" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved12" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved13" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved14" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reserved15" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D00" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D01" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D02" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D03" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D04" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D05" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D06" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D07" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D08" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D09" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D10" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D11" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D12" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D13" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D14" DataType="BOOL" Value="0"/>
+<DataValueMember Name="D15" DataType="BOOL" Value="0"/>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
 <Tag Name="Conv_Trim1" TagType="Base" DataType="u_LEPConveyorToLEP" Constant="false" ExternalAccess="Read/Write">
 <Description>
 <![CDATA[TRIM_1 % 

@@ -22350,7 +22350,7 @@ IHM]]>
 <![CDATA[NOP();]]>
 </Text>
 </Rung>
-<<Rung Number="21" Type="N">
+<Rung Number="21" Type="N">
 <Comment>
 <![CDATA[<@DIAG>
 #
